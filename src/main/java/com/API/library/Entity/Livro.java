@@ -1,5 +1,6 @@
 package com.API.library.Entity;
 
+import com.API.library.Dto.DadosCadastroLivro;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

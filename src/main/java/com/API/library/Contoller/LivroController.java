@@ -22,13 +22,10 @@ public class LivroController {
     @PostMapping
     public void cadastrar(@RequestBody DadosCadastroLivro dados){
         livroRepository.save(new Livro(dados));
-
     }
 
     @GetMapping
     public List<Livro> buscar(){
         return livroService.getLivroRepository();
     }
-
-
 }
