@@ -1,6 +1,6 @@
 package com.API.library.Contoller;
 
-import com.API.library.Entity.DadosCadastroLivro;
+import com.API.library.Dto.DadosCadastroLivro;
 import com.API.library.Entity.Livro;
 import com.API.library.Repository.LivroRepository;
 import com.API.library.Service.LivroService;
