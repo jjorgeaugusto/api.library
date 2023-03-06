@@ -1,4 +1,10 @@
 package com.API.library.Dto;
 
-public record DadosCadastroLivro(Long id, String nome) {
+import com.API.library.Entity.Livro;
+import com.API.library.Repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public record DadosCadastroLivro(String nome) {
+    public DadosCadastroLivro {
+    }
 }

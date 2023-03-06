@@ -16,14 +16,10 @@ public class LivroController {
     @Autowired
     private LivroService livroService;
 
-    @Autowired
-    private LivroRepository livroRepository;
-
     @PostMapping
     public void cadastrar(@RequestBody DadosCadastroLivro dados){
-        livroRepository.save(new Livro(dados));
+        livroService.setLivroRepository(dados);
     }
-
     @GetMapping
     public List<Livro> buscar(){
         return livroService.getLivroRepository();
