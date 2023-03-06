@@ -21,8 +21,16 @@ public class Livro {
     @Column(name = "nome")
     public String nome;
 
-    public Livro(DadosCadastroLivro dados){
+    @Column(name = "autor")
+    public String autor;
+
+    @Column(name = "status")
+    public Status status;
+
+    public Livro(DadosCadastroLivro dados, Status status){
         this.nome = dados.nome();
+        this.autor = dados.autor();
+        this.status = dados.status();
     }
 
 }

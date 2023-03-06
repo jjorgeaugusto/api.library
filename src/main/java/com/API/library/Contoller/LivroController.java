@@ -2,7 +2,6 @@ package com.API.library.Contoller;
 
 import com.API.library.Dto.DadosCadastroLivro;
 import com.API.library.Entity.Livro;
-import com.API.library.Repository.LivroRepository;
 import com.API.library.Service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,10 +17,14 @@ public class LivroController {
 
     @PostMapping
     public void cadastrar(@RequestBody DadosCadastroLivro dados){
-        livroService.setLivroRepository(dados);
+        livroService.criarNovoLivroRepository(dados);
     }
     @GetMapping
-    public List<Livro> buscar(){
-        return livroService.getLivroRepository();
+//    public List<Livro> buscar(){
+//        return livroService.getLivroRepository().stream().toList();
+//
+//    }
+    public List<Livro> listaLivrosDisponiveis(){
+        return LivroService.listaLivros();
     }
 }
