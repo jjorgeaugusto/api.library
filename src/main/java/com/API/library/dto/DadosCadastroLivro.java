@@ -1,6 +1,6 @@
-package com.API.library.Dto;
+package com.API.library.dto;
 
-import com.API.library.Entity.Status;
+import com.API.library.entity.Status;
 
 public record DadosCadastroLivro(String nome, String autor, Status status) {
 

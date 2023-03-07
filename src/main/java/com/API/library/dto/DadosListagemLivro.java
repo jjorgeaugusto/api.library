@@ -1,8 +1,12 @@
-package com.API.library.Dto;
+package com.API.library.dto;
 
-import com.API.library.Entity.Status;
+import com.API.library.entity.Status;
 
 public class DadosListagemLivro {
     public DadosListagemLivro(Long id, String nome, String autor, Status status) {
+    }
+
+    public DadosListagemLivro(){
+
     }
 }

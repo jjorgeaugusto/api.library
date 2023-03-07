@@ -1,12 +1,14 @@
-package com.API.library.Entity;
+package com.API.library.entity;
 
-import com.API.library.Dto.DadosAtualizacaoLivro;
-import com.API.library.Dto.DadosCadastroLivro;
+import com.API.library.dto.DadosAtualizacaoLivro;
+import com.API.library.dto.DadosCadastroLivro;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "Livro")
@@ -18,7 +20,7 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "numero")
-    private Long id;
+    private BigInteger id;
     @Column(name = "nome")
     public String nome;
     @Column(name = "autor")
@@ -26,7 +28,6 @@ public class Livro {
     @Enumerated
     @Column(name = "status")
     public Status status;
-
     public boolean ativo;
 
     public Livro(DadosCadastroLivro dados, Status status){

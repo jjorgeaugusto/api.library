@@ -1,6 +1,6 @@
-package com.API.library.Repository;
+package com.API.library.repository;
 
-import com.API.library.Entity.Livro;
+import com.API.library.entity.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
