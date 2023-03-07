@@ -27,7 +27,10 @@ public class Livro {
     @Column(name = "status")
     public Status status;
 
+    public boolean ativo;
+
     public Livro(DadosCadastroLivro dados, Status status){
+        this.ativo = true;
         this.nome = dados.nome();
         this.autor = dados.autor();
         this.status = dados.status();
@@ -42,5 +45,10 @@ public class Livro {
         if (dados.status() != null){
             this.status = dados.status();
         }
+    }
+
+    public void inativo(){
+        this.ativo = false;
+        this.status = Status.INDISPONIVEL;
     }
 }

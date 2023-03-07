@@ -39,6 +39,6 @@ public class LivroController {
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id){
-
+        livroService.inativarLivro(id);
     }
 }

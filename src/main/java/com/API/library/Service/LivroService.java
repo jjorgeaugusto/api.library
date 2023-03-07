@@ -37,7 +37,9 @@ public class LivroService {
         Livro livro = livroRepository.getReferenceById(Math.toIntExact(dados.id()));
         livro.atualizarInformacoes(dados);
     }
-    public void apagarLivro(Long id){
-        livroRepository.deleteById(Math.toIntExact(id));
+
+    public void inativarLivro(Long id){
+        var livro = livroRepository.getReferenceById(Math.toIntExact(id));
+        livro.inativo();
     }
 }
