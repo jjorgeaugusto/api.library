@@ -2,9 +2,7 @@ package com.API.library.controller;
 
 import com.API.library.dto.DadosAtualizacaoLivro;
 import com.API.library.dto.DadosCadastroLivro;
-import com.API.library.dto.DadosListagemLivro;
 import com.API.library.entity.Livro;
-import com.API.library.entity.Status;
 import com.API.library.service.LivroService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -12,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(path = "/livro")

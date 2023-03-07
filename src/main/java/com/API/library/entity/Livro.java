@@ -28,6 +28,7 @@ public class Livro {
     @Enumerated
     @Column(name = "status")
     public Status status;
+    @Column(name = "ativo")
     public boolean ativo;
 
     public Livro(DadosCadastroLivro dados, Status status){
