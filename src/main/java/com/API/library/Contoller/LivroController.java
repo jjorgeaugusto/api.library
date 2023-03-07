@@ -20,10 +20,12 @@ public class LivroController {
         livroService.criarNovoLivroRepository(dados);
     }
     @GetMapping
-//    public List<Livro> buscar(){
-//        return livroService.getLivroRepository().stream().toList();
-//
-//    }
+    public List<Livro> buscar(){
+        return livroService.getLivroRepository().stream().toList();
+
+    }
+
+    @GetMapping("/disponivel")
     public List<Livro> listaLivrosDisponiveis(){
         return LivroService.listaLivros();
     }
