@@ -36,4 +36,9 @@ public class LivroController {
     public void atualizar(@RequestBody @Valid DadosAtualizacaoLivro dados){
         livroService.atualizar(dados);
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+
+    }
 }

@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "Livro")
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Livro {
@@ -22,6 +23,7 @@ public class Livro {
     public String nome;
     @Column(name = "autor")
     public String autor;
+    @Enumerated
     @Column(name = "status")
     public Status status;
 
@@ -29,8 +31,6 @@ public class Livro {
         this.nome = dados.nome();
         this.autor = dados.autor();
         this.status = dados.status();
-    }
-    public Livro(Long id, String nome, String autor, Status status){
     }
     public void atualizarInformacoes(DadosAtualizacaoLivro dados) {
         if(dados.nome() != null) {
