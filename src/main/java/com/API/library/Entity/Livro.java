@@ -20,10 +20,8 @@ public class Livro {
     private Long id;
     @Column(name = "nome")
     public String nome;
-
     @Column(name = "autor")
     public String autor;
-
     @Column(name = "status")
     public Status status;
 
@@ -32,11 +30,8 @@ public class Livro {
         this.autor = dados.autor();
         this.status = dados.status();
     }
-
     public Livro(Long id, String nome, String autor, Status status){
-
     }
-
     public void atualizarInformacoes(DadosAtualizacaoLivro dados) {
         if(dados.nome() != null) {
             this.nome = dados.nome();
