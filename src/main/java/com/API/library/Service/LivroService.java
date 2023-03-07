@@ -1,11 +1,14 @@
 package com.API.library.Service;
 
+import com.API.library.Dto.DadosAtualizacaoLivro;
 import com.API.library.Dto.DadosCadastroLivro;
 import com.API.library.Entity.Status;
 import com.API.library.Entity.Livro;
 import com.API.library.Repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,6 +32,11 @@ public class LivroService {
     }
     public void criarNovoLivroRepository(DadosCadastroLivro dados) {
         livroRepository.save(new Livro(dados, Status.DISPONIVEL));
+    }
+
+    public void atualizar(DadosAtualizacaoLivro dados){
+        Livro livro = livroRepository.getReferenceById(Math.toIntExact(dados.id()));
+        livro.atualizarInformacoes(dados);
     }
 
 }
