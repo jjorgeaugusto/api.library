@@ -19,6 +19,7 @@ public class LivroController {
     private LivroService livroService;
 
     @PostMapping
+    @Transactional
     public void cadastrar(@RequestBody DadosCadastroLivro dados){
         livroService.novoLivroVerificado(dados);
     }

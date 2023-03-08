@@ -5,8 +5,4 @@ import com.api.library.entity.Status;
 public class DadosListagemLivro {
     public DadosListagemLivro(Long id, String nome, String autor, Status status) {
     }
-
-    public DadosListagemLivro(){
-
-    }
 }
