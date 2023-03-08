@@ -1,7 +1,7 @@
-package com.API.library.entity;
+package com.api.library.entity;
 
-import com.API.library.dto.DadosAtualizacaoLivro;
-import com.API.library.dto.DadosCadastroLivro;
+import com.api.library.dto.DadosAtualizacaoLivro;
+import com.api.library.dto.DadosCadastroLivro;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

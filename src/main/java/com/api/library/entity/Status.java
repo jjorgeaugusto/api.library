@@ -1,4 +1,4 @@
-package com.API.library.entity;
+package com.api.library.entity;
 
 public enum Status {
 

@@ -1,18 +1,15 @@
-package com.API.library.controller;
+package com.api.library.controller;
 
-import com.API.library.dto.DadosAtualizacaoLivro;
-import com.API.library.dto.DadosCadastroLivro;
-import com.API.library.dto.DadosListagemLivro;
-import com.API.library.entity.Livro;
-import com.API.library.entity.Status;
-import com.API.library.service.LivroService;
+import com.api.library.entity.Livro;
+import com.api.library.service.LivroService;
+import com.api.library.dto.DadosAtualizacaoLivro;
+import com.api.library.dto.DadosCadastroLivro;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(path = "/livro")
@@ -23,7 +20,7 @@ public class LivroController {
 
     @PostMapping
     public void cadastrar(@RequestBody DadosCadastroLivro dados){
-        livroService.criarNovoLivro(dados);
+        livroService.novoLivroVerificado(dados);
     }
     @GetMapping
     public List<Livro> buscar(){
