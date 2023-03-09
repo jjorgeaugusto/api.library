@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class LivroService {
@@ -23,8 +24,9 @@ public class LivroService {
     public List<Livro> listarTodosLivros(){
         return livroRepository.findAll();
     }
-    public List<Livro> listaLivrosDisponivel(){
-        return listarTodosLivros().stream().filter(l -> l.getStatus() == Status.DISPONIVEL).toList();
+    public List<Livro> listaLivrosDisponivel() {
+        return listarTodosLivros().stream().filter(l -> l.getStatus().equals(Status.DISPONIVEL))
+                .collect(Collectors.toList());
     }
     public void criarNovoLivro(DadosCadastroLivro dados) {
         livroRepository.save(new Livro(dados, Status.DISPONIVEL));
@@ -38,17 +40,11 @@ public class LivroService {
         livro.inativo();
     }
     public boolean verificaNomeLivro(DadosCadastroLivro dados) {
-        List<Livro> livros = livroRepository.findByNome(dados.nome());
-        for (Livro livro : livros) {
-            if (livro.getNome().equals(dados.nome())) {
-                return true;
-            }
-        }
-        return false;
+        return livroRepository.existsByNome(dados.nome());
     }
 
     public void novoLivroVerificado(DadosCadastroLivro dados) throws LivroJaExistenteException {
-        if (verificaNomeLivro(dados) == false){
+        if (!verificaNomeLivro(dados)){
             criarNovoLivro(dados);
         }
         else {
