@@ -15,7 +15,7 @@ O projeto é uma demonstração de um sistema de bibliotecas.
 ## Dependências
 <ul>
     <li>Docker</li>
-    <li>Maen</li>
+    <li>Maven</li>
     <li>Java 11</li>
 </ul>
 
