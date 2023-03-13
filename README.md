@@ -1,5 +1,4 @@
 # api.library
-# Biblioteca
 O projeto é uma demonstração de um sistema de bibliotecas. 
 
 <br/>
